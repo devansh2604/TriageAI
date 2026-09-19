@@ -43,8 +43,8 @@ JSON, and a forged assistant turn). No request used transport fallback. All five
 ML evasion measurements were rerun on 37 held-out malicious emails. These checks
 do not establish factual correctness of every summary or paraphrase-leakage immunity.
 
-The project is published in the private [devansh2604/TriageAI repository](https://github.com/devansh2604/TriageAI)
-through [draft PR #1](https://github.com/devansh2604/TriageAI/pull/1). Main contains only an
+The project is published in the public [devansh2604/TriageAI repository](https://github.com/devansh2604/TriageAI)
+through [PR #1](https://github.com/devansh2604/TriageAI/pull/1). Main contains only an
 empty bootstrap commit; implementation remains on `feature/triageai` pending review.
 [GitHub Actions run 35441340709](https://github.com/devansh2604/TriageAI/actions/runs/35441340709)
 passed Ruff and all 131 tests on Ubuntu in 3.75 seconds of pytest execution for commit
