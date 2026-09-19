@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "alert_id",
+    "timestamp",
+    "inputs_hash",
+    "model_version",
+    "ml_probability",
+    "score",
+    "tier",
+    "flags",
+    "attack_techniques",
+    "enrichment",
+    "elapsed_seconds"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "alert_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "inputs_hash": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "ml_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "tier": {
+      "enum": [
+        "AUTO-CLOSE",
+        "ANALYST-REVIEW",
+        "AUTO-ESCALATE"
+      ]
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "flag_id",
+          "severity",
+          "evidence",
+          "attack_technique"
+        ],
+        "properties": {
+          "flag_id": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "attack_technique": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "attack_techniques": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "enrichment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "recommended_action",
+        "confidence",
+        "llm_used",
+        "warning"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 1800
+        },
+        "recommended_action": {
+          "enum": [
+            "close",
+            "request info",
+            "block sender",
+            "reset creds",
+            "escalate to IR"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "llm_used": {
+          "type": "boolean"
+        },
+        "warning": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "elapsed_seconds": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,63 @@
+# SOC replay report
+
+```json
+{
+  "metrics": {
+    "n": 240,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "fpr_at_95_recall": 0.0,
+    "fpr_at_99_recall": 0.0,
+    "auto_close_fraction": 0.0,
+    "auto_close_n": 0,
+    "auto_close_fn": 0,
+    "auto_close_error_rate": null,
+    "auto_close_fn_rate_all_malicious": 0.0,
+    "auto_close_error_upper95": 1.0,
+    "auto_escalate_fraction": 0.0,
+    "auto_escalate_n": 0,
+    "auto_escalate_precision": null,
+    "escalation_false_discovery_rate": null,
+    "escalation_fpr_all_benign": 0.0,
+    "estimated_hours_saved_per_1000": 0.0,
+    "median_time_to_triage_seconds": 0.006755437992978841,
+    "llm_used_n": 0,
+    "timing_mode": "scoring, fallback, schema and audit; LLM disabled"
+  },
+  "subgroups": [
+    {
+      "dimension": "source",
+      "group": "enron",
+      "n": 204,
+      "recall": null,
+      "fpr": 0.0
+    },
+    {
+      "dimension": "source",
+      "group": "nazario",
+      "n": 36,
+      "recall": 1.0,
+      "fpr": null
+    },
+    {
+      "dimension": "language_proxy",
+      "group": "mostly ASCII",
+      "n": 240,
+      "recall": 1.0,
+      "fpr": 0.0
+    },
+    {
+      "dimension": "sender_domain",
+      "group": "missing",
+      "n": 204,
+      "recall": null,
+      "fpr": 0.0
+    }
+  ],
+  "subgroup_caution": "ASCII is not a language label. Groups below 10 records are omitted."
+}
+```

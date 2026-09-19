@@ -1,0 +1,129 @@
+{
+  "cv": {
+    "logistic": {
+      "pr_auc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "roc_auc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "f1": {
+        "mean": 0.9939393939393939,
+        "std": 0.01212121212121211
+      }
+    },
+    "svm": {
+      "pr_auc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "roc_auc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "f1": {
+        "mean": 0.9939393939393939,
+        "std": 0.01212121212121211
+      }
+    },
+    "hist_gradient_boosting": {
+      "pr_auc": {
+        "mean": 0.9996589223924864,
+        "std": 0.0006821552150271693
+      },
+      "roc_auc": {
+        "mean": 0.9999751274717074,
+        "std": 4.974505658501549e-05
+      },
+      "f1": {
+        "mean": 0.9884021949257352,
+        "std": 0.010962843943217455
+      }
+    }
+  },
+  "metrics": {
+    "validation_stream": {
+      "n": 240,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr_at_95_recall": 0.0,
+      "fpr_at_99_recall": 0.0,
+      "auto_close_fraction": 0.0,
+      "auto_close_n": 0,
+      "auto_close_fn": 0,
+      "auto_close_error_rate": null,
+      "auto_close_fn_rate_all_malicious": 0.0,
+      "auto_close_error_upper95": 1.0,
+      "auto_escalate_fraction": 0.0,
+      "auto_escalate_n": 0,
+      "auto_escalate_precision": null,
+      "escalation_false_discovery_rate": null,
+      "escalation_fpr_all_benign": 0.0,
+      "estimated_hours_saved_per_1000": 0.0,
+      "median_time_to_triage_seconds": null
+    },
+    "test": {
+      "n": 544,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr_at_95_recall": 0.0,
+      "fpr_at_99_recall": 0.0,
+      "auto_close_fraction": 0.0,
+      "auto_close_n": 0,
+      "auto_close_fn": 0,
+      "auto_close_error_rate": null,
+      "auto_close_fn_rate_all_malicious": 0.0,
+      "auto_close_error_upper95": 1.0,
+      "auto_escalate_fraction": 0.0,
+      "auto_escalate_n": 0,
+      "auto_escalate_precision": null,
+      "escalation_false_discovery_rate": null,
+      "escalation_fpr_all_benign": 0.0,
+      "estimated_hours_saved_per_1000": 0.0,
+      "median_time_to_triage_seconds": null
+    },
+    "eval_stream": {
+      "n": 240,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "fpr_at_95_recall": 0.0,
+      "fpr_at_99_recall": 0.0,
+      "auto_close_fraction": 0.0,
+      "auto_close_n": 0,
+      "auto_close_fn": 0,
+      "auto_close_error_rate": null,
+      "auto_close_fn_rate_all_malicious": 0.0,
+      "auto_close_error_upper95": 1.0,
+      "auto_escalate_fraction": 0.0,
+      "auto_escalate_n": 0,
+      "auto_escalate_precision": null,
+      "escalation_false_discovery_rate": null,
+      "escalation_fpr_all_benign": 0.0,
+      "estimated_hours_saved_per_1000": 0.0,
+      "median_time_to_triage_seconds": null
+    }
+  },
+  "policy": {
+    "max_close_error": 0.01,
+    "min_escalation_precision": 0.95,
+    "min_support": 30,
+    "auto_close": -1.0,
+    "auto_escalate": 2.0,
+    "analyst_minutes_per_alert": 5
+  },
+  "winner": "logistic"
+}
