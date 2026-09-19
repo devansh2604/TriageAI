@@ -55,7 +55,8 @@ ATT&CK hypotheses, rule evidence, model explanations, a feedback form and metric
 In the delivered workspace, dependencies are already installed in `../../work/venv`.
 Use `make PYTHON=../../work/venv/bin/python run` to reuse that environment, or run
 `make setup` for a self-contained virtual environment. The trained artifact and data
-are present locally. They are excluded from Git. No global packages were installed.
+are present locally. They are excluded from Git. Ollama 0.33.0 and the 2.2 GB
+`phi3:mini` model were installed separately for the live checks.
 
 For enrichment, install Ollama from its official distribution separately, then run:
 
@@ -68,10 +69,9 @@ make authorship
 ```
 
 `phi3:mini` is the default for 8 GB machines. `llama3.1:8b` is configurable but takes
-more RAM and CPU time. The default enrichment read timeout is eight seconds; cold
-CPU generation may time out and fall back. Raise `ollama.timeout_seconds` up to the
-30-second runtime cap if appropriate. Live Ollama and rewrite training were not
-available during this build. The app remains usable without them.
+more RAM and CPU time. The enrichment read timeout is 30 seconds, also the runtime cap. Cold
+CPU generation may still time out and fall back. The app remains usable without
+Ollama. The measured live checks are recorded in `docs/VERIFICATION.md`.
 
 ## Data and measured results
 
@@ -158,8 +158,8 @@ multiplicity or domain shift; they are not a guarantee for future mail.
 
 | Check | Result |
 |---|---|
-| Injection payloads, across 15 categories | 30/30 offline invariant/schema checks passed |
-| Live Ollama payload generation | 0/30 tested; live security assessment incomplete |
+| Injection payloads, across 15 categories | 30/30 live invariant/schema checks passed on the earlier response format |
+| Live Ollama payload generation | Earlier format: 30 generated, 27 accepted, 3 rejected. Final sentence-array rerun pending. |
 | Classic ML evasions | 5 measured transformations of held-out malicious mail |
 | LLM decision authority | No tier/score field, tools or external actions |
 
@@ -235,7 +235,7 @@ MANAGE. [Security design](docs/SECURITY_DESIGN.md) describes the trust boundary.
 - I built a local alert triage workflow around 3,623 deduplicated public emails, with an 85:15 SOC replay and explicit human-in-the-loop review.
 - I compared 3 calibrated scikit-learn models across 5 folds and measured false-positive reduction policy through auto-close error and escalation precision; the supplied data supported 0% automation.
 - I implemented detection engineering rules for 5 MITRE ATT&CK techniques, retaining evidence and an audit record for each completed triage decision.
-- I added AI red-teaming with 30 injection payloads and 5 ML evasions, verifying prompt-injection hardening boundaries while reporting 0 live-LLM payloads tested.
+- I added AI red-teaming with 30 injection payloads and 5 ML evasions, verifying prompt-injection hardening boundaries with 30 live CPU-model responses tested on the earlier response format (27 accepted, 3 rejected); the sentence-array revision still needs its live rerun.
 - I mapped operational risks to all 4 NIST AI RMF functions and enforced 2 promotion safety checks: non-regressing auto-close error and escalation precision.
 
 ## Timings and resource expectations
@@ -247,7 +247,9 @@ Tests generally take seconds. Batch replay and the offline red-team suite take s
 to a few minutes. These are estimates, not MacBook Air benchmarks; measured build
 results are in `docs/VERIFICATION.md`.
 
-CPU-only Ollama cold starts and generation can take tens of seconds per alert. One
-hundred rewrite pairs can take an hour or more. Neither timing was measured here.
+CPU-only Ollama produced one accepted UI annotation in 5.37 seconds, but other
+requests timed out at 30 seconds or were rejected. Heavy paging after resume made
+generation substantially slower. One hundred rewrite pairs can take an hour or
+more; rewrite training has not completed on this host.
 Use phi3:mini and close memory-heavy apps on 8 GB machines. Model comparison runs
 serially with two math threads; caches hold at most 6,000 deterministic feature rows.

@@ -11,5 +11,5 @@ policy:
 ollama:
   url: http://127.0.0.1:11434
   model: phi3:mini
-  timeout_seconds: 8
+  timeout_seconds: 30
   enabled: true

@@ -20,6 +20,8 @@ The read timeout is an idle-read timeout, not a hard whole-process deadline. A h
 local service is outside this prototype's trust boundary. Triage has already completed
 before an analyst requests enrichment, and failures return a visible fallback.
 
+The model-facing schema requires an array of three sentence strings. After that
+validation, the strings are joined into the public summary field and checked again.
 Schema validation checks shape, action enumeration, length and numeric confidence.
 Exact instruction fragments, a test sentinel and active URL/markup patterns are
 rejected. These controls are defense in depth, not a reliable detector of all injected
