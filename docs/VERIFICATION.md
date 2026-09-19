@@ -28,9 +28,14 @@ resistance and the human/rewrite AI-style classifier remain untested and untrain
 The thirty fallback passes must not be described as thirty successful live-LLM defenses.
 No global installation was performed while permission was pending.
 
-The GitHub Actions workflow is supplied but was not run on GitHub. No remote repository
-was provided, so no PR was created or published. No live SOC deployment, analyst labor
-study, real-world false-positive reduction or production feedback promotion was tested.
+The project is published in the private [devansh2604/TriageAI repository](https://github.com/devansh2604/TriageAI)
+through [draft PR #1](https://github.com/devansh2604/TriageAI/pull/1). Main contains only an
+empty bootstrap commit; implementation remains on `feature/triageai` pending review.
+[GitHub Actions run 35441340709](https://github.com/devansh2604/TriageAI/actions/runs/35441340709)
+passed Ruff and all 131 tests on Ubuntu in 3.75 seconds of pytest execution for commit
+`8d04d8e`. The corresponding pull-request run also passed. No live SOC deployment,
+analyst labor study, real-world false-positive reduction or production feedback
+promotion was tested.
 The retained UI test feedback has no corrected label and cannot train a candidate.
 
 The exact `make setup` target was not rerun into a second virtual environment; its
