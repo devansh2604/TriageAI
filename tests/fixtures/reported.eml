@@ -1,0 +1,12 @@
+From: PayPal Support <support@billing-example.invalid>
+To: analyst@example.com
+Subject: Urgent account suspended
+Reply-To: collector@external.invalid
+Message-ID: <triageai-fixture@example.com>
+Authentication-Results: mx.example.com; spf=fail; dkim=fail; dmarc=fail
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>Dear customer, verify your account immediately.</p>
+<p><a href="http://paypal-security.example/login">https://paypal.com</a></p>
+<form action="http://paypal-security.example/login">Confirm your password</form>

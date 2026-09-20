@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/raw/*
+!data/raw/.gitkeep
+data/*.parquet
+data/*.jsonl
+models/*.joblib
+.DS_Store
+models/*.lock
+models/*.jsonl

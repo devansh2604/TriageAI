@@ -1,0 +1,15 @@
+seed: 42
+model_version: triageai_v1
+blend_ml: 0.85
+policy:
+  max_close_error: 0.01
+  min_escalation_precision: 0.95
+  min_support: 30
+  auto_close: -1.0
+  auto_escalate: 2.0
+  analyst_minutes_per_alert: 5
+ollama:
+  url: http://127.0.0.1:11434
+  model: phi3:mini
+  timeout_seconds: 30
+  enabled: true

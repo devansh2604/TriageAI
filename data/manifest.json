@@ -1,0 +1,37 @@
+{
+  "raw_rows": 3979,
+  "unique_rows": 3623,
+  "seed": 42,
+  "splits": {
+    "alerts": {
+      "rows": 3623,
+      "malicious": 247,
+      "benign": 3376
+    },
+    "train": {
+      "rows": 2536,
+      "malicious": 173,
+      "benign": 2363
+    },
+    "validation": {
+      "rows": 543,
+      "malicious": 37,
+      "benign": 506
+    },
+    "test": {
+      "rows": 544,
+      "malicious": 37,
+      "benign": 507
+    },
+    "validation_stream": {
+      "rows": 240,
+      "malicious": 36,
+      "benign": 204
+    },
+    "eval_stream": {
+      "rows": 240,
+      "malicious": 36,
+      "benign": 204
+    }
+  }
+}
